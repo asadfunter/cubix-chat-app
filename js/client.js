@@ -4,7 +4,7 @@ const form = document.getElementById('send-message');
 const msgInput = document.getElementById('message_input');
 const messageContainer = document.querySelector('.messages');
 
-const append = (message, position) => {
+const append = (message, position, noImage = false) => {
     const messageElement = document.createElement('li');
     const imageDiv = document.createElement('div');
     imageDiv.classList.add('avatar');
@@ -32,7 +32,7 @@ socket.emit('new-user-joined', name);
 
 socket.on('user-joined', name => {
     console.log("ASDsad");
-    append(`${name} joined the chat`, 'right');
+    append(`${name} joined the chat`, 'right', true);
 })
 
 socket.on('receive', data => {
