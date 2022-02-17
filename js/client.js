@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000');
+const socket = io(`https://chat-app-cubix.herokuapp.com:${process.env.PORT || 8000}`);
 
 const form = document.getElementById('send-message');
 const msgInput = document.getElementById('message_input');
